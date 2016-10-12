@@ -1,6 +1,7 @@
 /* eslint-disable prefer-template */
 var webpack = require('webpack');
 var path = require('path');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 var env = process.env.NODE_ENV || 'development';
 var platform = process.env.PLATFORM || 'browser';
@@ -42,5 +43,19 @@ var config = {
         })
     ]
 };
+
+var ExtractCSS = new ExtractTextPlugin('main.css');
+
+    config.module.loaders.push({
+        test: /\.css$/,
+        loader: ExtractCSS.extract('style', 'css')
+    });
+    config.plugins.push(
+        ExtractCSS,
+        new webpack.optimize.UglifyJsPlugin({
+            compress: { warnings: false }
+        }),
+        new webpack.optimize.OccurrenceOrderPlugin(true)
+    );
 
 module.exports = config;
