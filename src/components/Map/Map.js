@@ -23,9 +23,8 @@ class Map extends React.Component {
 }
 
 Map.propTypes = {
-  username: React.PropTypes.string.isRequired,
+  userData: React.PropTypes.array.isRequired,
   coords: React.PropTypes.array.isRequired,
-  src: React.PropTypes.string.isRequired,
 };
 
 export default Map;
