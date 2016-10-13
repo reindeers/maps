@@ -1,21 +1,23 @@
 import React from 'react'
-import UserList from '../UserList/UserList';
+import ListItem from '../../components/ListItem/ListItem';
 import Map from '../../components/Map/Map';
+
+import './MainContainer.css';
 
 class MainContainer extends React.Component {
   constructor() {
     super();
-    this.state = { users: [] };
+    this.state = { users: [], geoJson: {} };
   }
 
   componentDidMount() {
-    resultData = [];
+    let resultData = [];
+    let self = this;
     fetch('http://localhost:4000/features/')
       .then(function(response) {
           return response.json();
         }).then(function(res){
           let data = res.features;
-
           for (let i in data) {
               resultData[i] = {};
               resultData[i].id = data[i].properties.id || -1;
@@ -26,28 +28,29 @@ class MainContainer extends React.Component {
               resultData[i].color = data[i].properties.color || '#fff';
               resultData[i].coords = data[i].geometry.coordinates || [0, 0];
             }
-
-            self.setState({users: self.data});
+            self.setState({users: resultData, geoJson: res});
           })
           .catch( console.log );
   }
 
   render() {
-    const self = this;
     return (
-          <div>
-              {this.state.users.map((result) => (
-                  <UserList key={result.id}
-                      src={result.src}
-                      username={result.username}
-                      email={result.email}
-                      profileUrl={result.profileUrl}
-                  />
-              ))}
-
+          <div className="main-container">
+            <div className="list">
+                {this.state.users.map((result) => (
+                    <ListItem key={result.id}
+                        src={result.src}
+                        username={result.username}
+                        email={result.email}
+                        profileUrl={result.profileUrl}
+                        color={result.color}
+                    />
+                ))}
+              </div>
               <Map
-                coords={[-74.50, 40]}
-                userData={this.state.users}
+                coords={[-50.3932,
+        82.1649]}
+                userData={this.state.geoJson}
               />
           </div>
     )

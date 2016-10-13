@@ -1,1 +1,4 @@
-#map { height: 180px; }
+#map {
+    flex-grow: 20;
+    border-left: 1px solid #e6e8ed;
+}

@@ -1,0 +1,58 @@
+.list__p {
+    margin: 0;
+    font-size: 12px;
+}
+.list__h1 {
+    margin: 0;
+    font-size: 15px;
+}
+.list__span {
+    color: #e6e8ed;
+    font-size: 15px;
+    float: right;
+    margin-top: -5px;
+}
+
+.list__color {
+    width: 10px;
+    height: 10px;
+    float: right;
+    margin-bottom: 10px;
+}
+
+.list__avatar {
+    width: 30px;
+    height: 30px;
+    margin: 0 15px 0 0;
+}
+
+.list__user-card {
+    margin: 5px 0;
+    border-bottom: 1px solid #e6e8ed;
+    padding: 20px 10px;
+}
+
+.list__user-information {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    margin-bottom: 20px;
+}
+#map {
+    flex-grow: 20;
+    border-left: 1px solid #e6e8ed;
+}
+body{
+  margin: 0;
+}
+.main-container {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+}
+.list {
+    flex-grow: 1;
+    padding: 0 10px;
+    overflow-y: scroll;
+    height: 100vh;
+}

@@ -52,9 +52,6 @@ var ExtractCSS = new ExtractTextPlugin('main.css');
     });
     config.plugins.push(
         ExtractCSS,
-        new webpack.optimize.UglifyJsPlugin({
-            compress: { warnings: false }
-        }),
         new webpack.optimize.OccurrenceOrderPlugin(true)
     );
 
