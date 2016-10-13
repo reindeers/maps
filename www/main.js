@@ -10926,12 +10926,12 @@
 	          { className: 'list__user-information' },
 	          _react2.default.createElement(
 	            'div',
-	            { className: 'list__information-block' },
+	            null,
 	            _react2.default.createElement('img', { src: this.props.src, className: 'list__avatar' })
 	          ),
 	          _react2.default.createElement(
 	            'div',
-	            { className: 'list__information-block' },
+	            { className: 'list__user-information-text' },
 	            _react2.default.createElement(
 	              'h1',
 	              { className: 'list__h1' },
@@ -10941,16 +10941,16 @@
 	              'p',
 	              { className: 'list__p' },
 	              this.props.email
+	            ),
+	            _react2.default.createElement(
+	              'span',
+	              { className: 'list__span' },
+	              _react2.default.createElement(
+	                'a',
+	                { href: this.props.profileUrl },
+	                '\u043F\u043E\u0441\u043C\u043E\u0442\u0440\u0435\u0442\u044C \u043F\u0440\u043E\u0444\u0438\u043B\u044C'
+	              )
 	            )
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'span',
-	          { className: 'list__span' },
-	          _react2.default.createElement(
-	            'a',
-	            { href: this.props.profileUrl },
-	            'go to url'
 	          )
 	        )
 	      );

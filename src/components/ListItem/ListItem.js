@@ -7,15 +7,16 @@ class ListItem extends React.Component {
     return (
       <section className="list__user-card">
           <div className="list__user-information">
-              <div className="list__information-block">
+              <div>
                   <img src={this.props.src} className="list__avatar"/>
               </div>
-              <div className="list__information-block">
+              <div className="list__user-information-text">
                   <h1 className="list__h1">{this.props.username}</h1>
                   <p className="list__p">{this.props.email}</p>
+                  <span className="list__span"><a href={this.props.profileUrl}>посмотреть профиль</a></span>
               </div>
           </div>
-          <span className="list__span"><a href={this.props.profileUrl}>go to url</a></span>
+
       </section>
     )
   }
